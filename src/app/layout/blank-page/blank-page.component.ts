@@ -17,4 +17,9 @@ export class BlankPageComponent implements OnInit {
         this.restaurantsService.restaurants()
         .subscribe(restaurants => this.restaurants = restaurants)
     }
+
+    login() {
+        this.restaurantsService.login(this.loginForm.value.email, this.loginForm.value.password)
+          .subscribe(user => this.restaurantsService.notify(`Bem vindo, ${user.name}!`))
+      }
 }

@@ -1,0 +1,1 @@
+export const SB_API = "http://www.json-generator.com/api/json/get/caxBciYiyG?indent=2"
