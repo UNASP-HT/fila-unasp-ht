@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { RestaurantsService } from './layout/blank-page/blank-page.service';
+import { SharedModule } from './shared/shared.module';
 
 // AoT requires an exported function for factories
 export function createTranslateLoader(http: HttpClient) {
@@ -24,6 +25,7 @@ export function createTranslateLoader(http: HttpClient) {
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        SharedModule.forRoot(),
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
