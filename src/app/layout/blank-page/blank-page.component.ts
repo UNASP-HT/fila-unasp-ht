@@ -18,9 +18,10 @@ export class BlankPageComponent implements OnInit {
     ngOnInit() {
 
         this.signUpForm = this.fb.group({
-            name: this.fb.control('', [Validators.required]),
-            email: this.fb.control('', [Validators.required, Validators.email]),
-            password: this.fb.control('', [Validators.required])
+            restaurantName: this.fb.control('', [Validators.required]),
+            categoryName: this.fb.control('', [Validators.required]),
+            timeInput: this.fb.control('', [Validators.required]),
+            starsInput: this.fb.control('', [Validators.required])
           });
 
         this.restaurantsService.restaurants()

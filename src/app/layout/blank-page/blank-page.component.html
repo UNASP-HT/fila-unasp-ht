@@ -11,19 +11,21 @@
         <form [formGroup]="signUpForm">
 
             <div class="form-group">
-              <input type="text" class="form-control" id="name" placeholder="Nome do Restaurante" required>
+              <input type="text" class="form-control" id="name" 
+              formControlName="restaurantName" placeholder="Nome do Restaurante">
             </div>
       
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Categoria" required>
+              <input type="text" class="form-control" placeholder="Categoria" 
+              formControlName="categoryName">
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Tempo de Espera" required>
+                <input type="text" class="form-control" placeholder="Tempo de Espera" formControlName="timeInput">
               </div>
 
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Estrelas" required>
+                <input type="text" class="form-control" formControlName="starsInput" placeholder="Estrelas">
               </div>
       
             <button type="submit" class="btn btn-success">Adicionar Restaurante</button>
