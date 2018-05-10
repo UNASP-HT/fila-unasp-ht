@@ -1,7 +1,6 @@
 // criado para que outras informacoes possao ser reaproveitadas
 export interface Restaurant {
 
-    id:string
     name:string
     category:string
     deliveryEstimate:string

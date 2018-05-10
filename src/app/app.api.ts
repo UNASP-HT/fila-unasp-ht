@@ -1,1 +1,1 @@
-export const SB_API = "http://www.json-generator.com/api/json/get/caxBciYiyG?indent=2"
+export const SB_API = "http://localhost:3000/restaurants"

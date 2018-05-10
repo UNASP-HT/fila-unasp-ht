@@ -28,4 +28,12 @@ export class BlankPageComponent implements OnInit {
         .subscribe(restaurants => this.restaurants = restaurants)
     }
 
+    addRestaurant() {
+        this.restaurantsService.addRestaurant(this.signUpForm.value.restaurantName, this.signUpForm.value.categoryName,
+                                              this.signUpForm.value.timeInput, this.signUpForm.value.starsInput)
+          .subscribe(x => alert('Restaurante adicionado com sucesso'))
+          alert("oi" + this.signUpForm.value.restaurantName + "" + this.signUpForm.value.categoryName + "" +
+            this.signUpForm.value.timeInput + "" + this.signUpForm.value.starsInput)
+      }
+
 }

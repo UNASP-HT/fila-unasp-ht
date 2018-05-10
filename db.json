@@ -1,0 +1,20 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Marcos' Bakery",
+      "category": "Fast Food",
+      "deliveryEstimate": "1 hour",
+      "rating": "5",
+      "imagePath": "https://i.imgur.com/RXXFUPZ.jpg"
+    },
+    {
+      "name": "nome",
+      "category": "categoria",
+      "deliveryEstimate": "tempo",
+      "rating": "4",
+      "imagePath": "https://i.imgur.com/RXXFUPZ.jpg",
+      "id": 2
+    }
+  ]
+}

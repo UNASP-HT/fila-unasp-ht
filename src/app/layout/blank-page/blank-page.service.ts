@@ -1,8 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/do';
+import { tap, switchMap, filter } from "rxjs/operators";
 
 import { Observable } from "rxjs/Observable";
 import { Restaurant } from "./blank-test-content/blank-teste-content.model";
@@ -14,17 +12,19 @@ export class RestaurantsService {
     restaurant: Restaurant
     constructor(private http: HttpClient) { }
 
-    // restaurants(): Observable<Restaurant[]> {
-    //     return this.http.get<Restaurant[]>(`${MEAT_API}/restaurants`)
-    // }
-
     restaurants(): Observable<Restaurant[]> {
         return this.http.get<Restaurant[]>(`${SB_API}`)
     }
 
-    login(email: string, password: string): Observable<Restaurant> {
+    addRestaurant(restaurantName: string, categoryName: string, 
+                  timeInput:string, starsInput: string): Observable<Restaurant> {
+                    alert("oi2" + "restaurantName :" + restaurantName + " categoryName :" + 
+                    categoryName + " timeInput: " + timeInput + " starsInput: " + starsInput)
+                    
         return this.http
-            .post<Restaurant>(`${SB_API}/register`, { email: email, password: password })
-            .do(user => this.restaurant = user);
+            .post<Restaurant>(`${SB_API}`, { name: restaurantName, category: categoryName,
+                deliveryEstimate: timeInput, rating: starsInput, imagePath: 'https://i.imgur.com/RXXFUPZ.jpg' })
+                .pipe(
+                    tap(x => this.restaurant = x))           
     }
 }
